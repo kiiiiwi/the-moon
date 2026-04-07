@@ -281,13 +281,13 @@ export default function LunarInteriorClient() {
 
         {/* ── Info cards panel — bottom-right overlay ── */}
         <div
-          className="absolute right-4 top-1/2 z-10 flex w-[360px] -translate-y-1/2 flex-col gap-1.5 overflow-y-auto rounded-xl border border-white/[0.08] p-4 backdrop-blur-xl lg:right-6 lg:w-[500px]"
+          className="absolute right-4 top-1/2 z-10 flex w-[420px] -translate-y-1/2 flex-col gap-2 overflow-y-auto rounded-xl border border-white/[0.08] p-5 backdrop-blur-xl lg:right-6 lg:w-[560px]"
           style={{
             background: "rgba(13, 16, 32, 0.82)",
             maxHeight: "calc(100% - 48px)",
           }}
         >
-          <p className="mb-0.5 text-[10px] uppercase tracking-[0.2em] text-white/25">
+          <p className="mb-1 text-[12px] uppercase tracking-[0.2em] text-white/25">
             Layer Structure / 内部分层
           </p>
 
@@ -313,7 +313,7 @@ export default function LunarInteriorClient() {
                     : "rgba(255,255,255,0.07)"
                     }`,
                   borderRadius: "8px",
-                  padding: "7px 10px",
+                  padding: "10px 14px",
                   transition:
                     "background 0.3s, border-color 0.3s, box-shadow 0.3s",
                   boxShadow: isActive
@@ -324,7 +324,7 @@ export default function LunarInteriorClient() {
                 {/* Header row */}
                 <div className="flex items-center gap-2.5">
                   <div
-                    className="h-2 w-2 flex-none rounded-full"
+                    className="h-2.5 w-2.5 flex-none rounded-full"
                     style={{
                       background: layer.color,
                       boxShadow: isActive
@@ -335,7 +335,7 @@ export default function LunarInteriorClient() {
                   />
                   <div className="flex flex-1 flex-wrap items-baseline gap-1.5">
                     <span
-                      className="text-[13px] font-semibold leading-tight"
+                      className="text-[16px] font-semibold leading-tight"
                       style={{
                         color: isActive
                           ? "#fff"
@@ -346,7 +346,7 @@ export default function LunarInteriorClient() {
                       {layer.name}
                     </span>
                     <span
-                      className="text-[9px] tracking-wider"
+                      className="text-[12px] tracking-wider"
                       style={{
                         color: isActive
                           ? layer.color
@@ -358,7 +358,7 @@ export default function LunarInteriorClient() {
                     </span>
                   </div>
                   <span
-                    className="shrink-0 text-[9px]"
+                    className="shrink-0 text-[12px]"
                     style={{ color: "rgba(255,255,255,0.3)" }}
                   >
                     {layer.depth}
@@ -368,22 +368,22 @@ export default function LunarInteriorClient() {
                 {/* Expandable detail */}
                 <div
                   style={{
-                    maxHeight: isActive ? "80px" : "0px",
+                    maxHeight: isActive ? "120px" : "0px",
                     overflow: "hidden",
                     transition:
                       "max-height 0.4s cubic-bezier(0.4,0,0.2,1)",
                   }}
                 >
-                  <div className="ml-[18px] mt-2 space-y-1">
+                  <div className="ml-[18px] mt-2.5 space-y-1.5">
                     <div className="flex gap-3">
-                      <span className="text-[9px] text-white/40">
+                      <span className="text-[12px] text-white/40">
                         密度 {layer.density}
                       </span>
-                      <span className="text-[9px] text-white/40">
+                      <span className="text-[12px] text-white/40">
                         温度 {layer.temp}
                       </span>
                     </div>
-                    <p className="text-[10px] leading-snug text-white/55">
+                    <p className="text-[12px] leading-snug text-white/55">
                       {layer.desc}
                     </p>
                   </div>
@@ -393,10 +393,10 @@ export default function LunarInteriorClient() {
           })}
 
           <div className="flex shrink-0 items-center justify-between border-t border-white/[0.06] pt-1.5">
-            <p className="text-[9px] text-white/20">
+            <p className="text-[12px] text-white/20">
               悬停或点击图层了解详情
             </p>
-            <p className="text-[9px] text-white/25">
+            <p className="text-[12px] text-white/25">
               数据来源：阿波罗任务及后续探测
             </p>
           </div>

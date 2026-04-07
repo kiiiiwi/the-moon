@@ -373,7 +373,7 @@ export function LunarMap() {
       <div className="fixed bottom-8 left-12 z-50 max-md:bottom-6 max-md:left-4">
         <SectionNavButton
           direction="prev"
-          section={{ label: "地月系", href: "/orbit" }}
+          section={{ label: "月相", href: "/phases" }}
         />
       </div>
       <div className="fixed bottom-8 right-12 z-50 max-md:bottom-6 max-md:right-4">

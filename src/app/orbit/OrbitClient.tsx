@@ -68,6 +68,9 @@ export default function OrbitClient() {
           <span className="orbit-header-subtitle">Earth-Moon System</span>
         </div>
         <div className="orbit-header-line" />
+        <p className="mt-3 max-w-2xl text-sm text-white/40">
+          鼠标滚轮滑动查看展开轨道
+        </p>
       </header>
 
       {/* ── Fixed back button — top right ── */}

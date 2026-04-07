@@ -31,18 +31,19 @@ interface Connection {
 }
 
 const NODES_DATA: Omit<Node, "x" | "y" | "vx" | "vy">[] = [
-  // 月球概览 (4个)
-  { id: "1", title: "月球的外观", radius: 35, href: "/about-moon", category: "overview" },
-  { id: "2", title: "月球的起源与演化", radius: 38, href: "/origin", category: "overview" },
+  // 月球概览 (5个)
+  { id: "1", title: "月球的外观", radius: 36, href: "/about-moon", category: "overview" },
+  { id: "2", title: "月球的起源与演化", radius: 32, href: "/origin", category: "overview" },
   { id: "3", title: "月球的内部构造", radius: 34, href: "/lunar-interior", category: "overview" },
   { id: "4", title: "地月系", radius: 32, href: "/orbit", category: "overview" },
+  { id: "5", title: "月相", radius: 38, href: "/phases", category: "overview" },
   // 月球环境 (1个)
-  { id: "5", title: "月球表面形态", radius: 36, href: "/geology-map", category: "environment" },
+  { id: "6", title: "月球表面形态", radius: 36, href: "/geology-map", category: "environment" },
   // 月球地质 (1个)
-  { id: "6", title: "月球化学元素", radius: 34, href: "/chapters/chemical-elements", category: "geology" },
+  { id: "7", title: "月球化学元素", radius: 34, href: "/chapters/chemical-elements", category: "geology" },
   // 探月活动 (2个)
-  { id: "7", title: "人类观月史", radius: 35, href: "/human-observing-moon", category: "exploration" },
-  { id: "8", title: "人类探月活动", radius: 38, href: "/mission-sites", category: "exploration" },
+  { id: "8", title: "人类观月史", radius: 35, href: "/human-observing-moon", category: "exploration" },
+  { id: "9", title: "人类探月活动", radius: 38, href: "/mission-sites", category: "exploration" },
 ];
 
 const CONNECTIONS: Connection[] = [
@@ -52,15 +53,19 @@ const CONNECTIONS: Connection[] = [
   { from: "2", to: "3" },
   { from: "3", to: "4" },
   { from: "4", to: "1" },
+  { from: "5", to: "4" },
+  { from: "5", to: "1" },
   // 跨类别关联
-  { from: "1", to: "5" },  // 外观 -> 表面形态
-  { from: "3", to: "6" },  // 内部构造 -> 化学元素
-  { from: "5", to: "6" },  // 表面形态 -> 化学元素
-  { from: "2", to: "6" },  // 起源演化 -> 化学元素
-  { from: "4", to: "7" },  // 地月系 -> 观月史
-  { from: "7", to: "8" },  // 观月史 -> 探月活动
-  { from: "5", to: "8" },  // 表面形态 -> 探月活动
-  { from: "6", to: "8" },  // 化学元素 -> 探月活动
+  { from: "1", to: "6" },  // 外观 -> 表面形态
+  { from: "3", to: "7" },  // 内部构造 -> 化学元素
+  { from: "6", to: "7" },  // 表面形态 -> 化学元素
+  { from: "2", to: "7" },  // 起源演化 -> 化学元素
+  { from: "1", to: "8" },  // 外观 -> 观月史
+  { from: "4", to: "8" },  // 地月系 -> 观月史
+  { from: "5", to: "8" },  // 月相 -> 观月史
+  { from: "8", to: "9" },  // 观月史 -> 探月活动
+  { from: "6", to: "9" },  // 表面形态 -> 探月活动
+  { from: "7", to: "9" },  // 化学元素 -> 探月活动
 ];
 
 export default function KnowledgeGraph() {

@@ -3,7 +3,7 @@
 import { Network, Sparkles } from "lucide-react";
 
 const LEGEND_ITEMS = [
-  { label: "月球概览", color: "#F1D088", description: "外观、起源、构造、地月系" },
+  { label: "月球概览", color: "#F1D088", description: "外观、起源、构造、地月系、月相" },
   { label: "月球环境", color: "#C1FAF8", description: "表面形态" },
   { label: "月球地质", color: "#E4B8FF", description: "化学元素" },
   { label: "探月活动", color: "#FFB899", description: "观月史、探月活动" },
@@ -34,11 +34,11 @@ export default function GraphLegend() {
                   boxShadow: `0 0 10px ${item.color}60`,
                 }}
               />
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-1">
                 <span className="text-xs font-medium" style={{ color: item.color }}>
                   {item.label}
                 </span>
-                <span className="text-[10px] text-gray-500">{item.description}</span>
+                <span className="text-[12px] text-gray-500">{item.description}</span>
               </div>
             </div>
           ))}
