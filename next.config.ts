@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /** 开发环境下隐藏左下角 Next.js 指示器（N 图标） */
+  devIndicators: false,
 };
 
 export default nextConfig;

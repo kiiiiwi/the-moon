@@ -1,0 +1,394 @@
+/* Migrated from 3d-moon/src/style.css — scoped to about-moon page */
+
+.about-moon-root {
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --sans:
+    "Source Han Sans CN", "Source Han Sans SC", "Source Han Sans", "Noto Sans SC",
+    system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color: var(--text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 1024px) {
+  .about-moon-root {
+    font-size: 16px;
+  }
+}
+
+.about-moon-root * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about-moon-root header {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #151829;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.about-moon-root .canvas-container {
+  overflow: hidden;
+}
+
+.about-moon-root .text {
+  color: #fff;
+  padding: 2em;
+}
+
+.about-moon-root .text h1 {
+  font-size: 2.5em;
+  font-family: var(--font-kanit-about), sans-serif;
+  line-height: 50px;
+}
+
+.about-moon-root .text p {
+  color: #afafaf;
+  max-width: 400px;
+  margin: 1em 0;
+  line-height: 27px;
+}
+
+/* --- Moon tabs (scoped) --- */
+.about-moon-root .moon-tabs {
+  width: 100%;
+  max-width: 640px;
+  font-family: var(--sans);
+}
+
+.about-moon-root .text .moon-tabs__pageTitle {
+  margin: 0 0 30px;
+  color: #fff;
+  font-size: 34px;
+  line-height: 1.1;
+  font-style: italic;
+  font-weight: 600;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.01em;
+}
+
+.about-moon-root .moon-tabs__list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.about-moon-root .moon-tabs__tab {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.35);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s,
+    box-shadow 0.25s;
+}
+
+.about-moon-root .moon-tabs__tab:hover {
+  color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.about-moon-root .moon-tabs__tab.is-active {
+  background: rgba(241, 208, 136, 0.15);
+  color: #f1d088;
+  border-color: rgba(241, 208, 136, 0.3);
+  box-shadow: 0 0 16px rgba(241, 208, 136, 0.08);
+}
+
+.about-moon-root .moon-tabs__panelWrap {
+  position: relative;
+  margin-top: 20px;
+  padding: 28px;
+  min-height: 280px;
+}
+
+.about-moon-root .moon-tabs__innerBorder {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(193, 250, 248, 0.06);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.about-moon-root .moon-tabs__brackets {
+  pointer-events: none;
+}
+
+.about-moon-root .moon-tabs__bracket {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  color: rgba(193, 250, 248, 0.3);
+}
+
+.about-moon-root .moon-tabs__bracket.is-tl {
+  top: 0;
+  left: 0;
+}
+
+.about-moon-root .moon-tabs__bracket.is-tr {
+  top: 0;
+  right: 0;
+}
+
+.about-moon-root .moon-tabs__bracket.is-bl {
+  bottom: 0;
+  left: 0;
+}
+
+.about-moon-root .moon-tabs__bracket.is-br {
+  bottom: 0;
+  right: 0;
+}
+
+.about-moon-root .moon-tabs__panel {
+  position: relative;
+}
+
+.about-moon-root .moon-tabs__title {
+  margin: 0;
+  color: #f1d088;
+  font-size: 28px;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.about-moon-root .moon-tabs__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 32px;
+  margin-top: 18px;
+}
+
+.about-moon-root .moon-tabs__label {
+  color: rgba(193, 250, 248, 0.5);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.about-moon-root .moon-tabs__value {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.about-moon-root .moon-tabs__stack {
+  margin-top: 18px;
+}
+
+.about-moon-root .moon-tabs__compareTop {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+}
+
+.about-moon-root .moon-tabs__dotGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-moon-root .moon-tabs__dot {
+  border-radius: 999px;
+  border: 1px solid rgba(193, 250, 248, 0.3);
+  background: radial-gradient(circle at 35% 35%, rgba(193, 250, 248, 0.15), transparent);
+}
+
+.about-moon-root .moon-tabs__dot.is-earth {
+  width: 72px;
+  height: 72px;
+  border-color: rgba(193, 250, 248, 0.3);
+}
+
+.about-moon-root .moon-tabs__dot.is-moon {
+  width: 20px;
+  height: 20px;
+  border-color: rgba(241, 208, 136, 0.3);
+  background: radial-gradient(circle at 35% 35%, rgba(241, 208, 136, 0.2), transparent);
+}
+
+.about-moon-root .moon-tabs__dotLabel {
+  font-size: 12px;
+}
+
+.about-moon-root .moon-tabs__dotLabel.is-earth {
+  color: rgba(193, 250, 248, 0.6);
+}
+
+.about-moon-root .moon-tabs__dotLabel.is-moon {
+  color: rgba(241, 208, 136, 0.6);
+}
+
+.about-moon-root .moon-tabs__hint {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.about-moon-root .moon-tabs__rows {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.about-moon-root .moon-tabs__row {
+  display: grid;
+  grid-template-columns: 64px 1fr 1fr;
+  gap: 14px;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-moon-root .moon-tabs__rowKey {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.about-moon-root .moon-tabs__rowEarth {
+  color: rgba(193, 250, 248, 0.8);
+}
+
+.about-moon-root .moon-tabs__rowMoon {
+  color: rgba(241, 208, 136, 0.8);
+}
+
+.about-moon-root .moon-tabs__listCard {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-moon-root .moon-tabs__satRow {
+  display: grid;
+  grid-template-columns: 1fr 72px 90px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition:
+    border-color 0.25s,
+    background-color 0.25s;
+}
+
+.about-moon-root .moon-tabs__satRow.is-highlight {
+  background: rgba(241, 208, 136, 0.07);
+  border-color: rgba(241, 208, 136, 0.2);
+}
+
+.about-moon-root .moon-tabs__satName {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.about-moon-root .moon-tabs__satRow.is-highlight .moon-tabs__satName {
+  color: #f1d088;
+}
+
+.about-moon-root .moon-tabs__satPlanet {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 14px;
+  text-align: center;
+}
+
+.about-moon-root .moon-tabs__satDia {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 14px;
+  text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+  .about-moon-root .moon-tabs__list {
+    justify-content: center;
+  }
+
+  .about-moon-root .moon-tabs__panelWrap {
+    padding: 22px;
+  }
+
+  .about-moon-root .moon-tabs__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-moon-root header {
+    grid-template-columns: 1fr;
+  }
+
+  .about-moon-root .text {
+    text-align: center;
+    order: 1;
+  }
+
+  .about-moon-root .canvas-container {
+    order: 2;
+  }
+
+  .about-moon-root .text p {
+    margin: 1em auto;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .about-moon-root .text h1 {
+    font-size: 3.4em;
+  }
+
+  .about-moon-root .text p {
+    font-size: 1.1em;
+  }
+}
+
+.about-moon-root .about-moon-top-actions {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-moon-root .about-moon-top-actions__dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 999px;
+}
+
+.about-moon-root .about-moon-top-actions__back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.about-moon-root .about-moon-top-actions__back:hover {
+  background: rgba(193, 250, 248, 0.1) !important;
+}

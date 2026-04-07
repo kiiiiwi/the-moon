@@ -1,0 +1,61 @@
+<svg width="299" height="299" viewBox="0 0 299 299" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_n_476_457)">
+<circle cx="149.5" cy="149.499" r="44.2454" fill="#F1CE36"/>
+<circle cx="149.5" cy="149.499" r="44.2454" stroke="#99732E" stroke-width="1.4"/>
+</g>
+<g opacity="0.65" filter="url(#filter1_dddddd_476_457)">
+<circle cx="149.5" cy="149.499" r="44.2454" fill="#CFB66A"/>
+</g>
+<defs>
+<filter id="filter0_n_476_457" x="104.552" y="104.552" width="89.8955" height="89.896" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.5 0.5" stitchTiles="stitch" numOctaves="3" result="noise" seed="5645" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(255, 255, 255, 0.5)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_476_457">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<filter id="filter1_dddddd_476_457" x="0.000122473" y="-0.000367418" width="299" height="299" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="1.24891"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.929412 0 0 0 0 0.772549 0 0 0 0 0.180392 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_476_457"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2.49782"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.929412 0 0 0 0 0.772549 0 0 0 0 0.180392 0 0 0 1 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_476_457" result="effect2_dropShadow_476_457"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="8.74238"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.929412 0 0 0 0 0.772549 0 0 0 0 0.180392 0 0 0 1 0"/>
+<feBlend mode="normal" in2="effect2_dropShadow_476_457" result="effect3_dropShadow_476_457"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="17.4848"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.929412 0 0 0 0 0.772549 0 0 0 0 0.180392 0 0 0 1 0"/>
+<feBlend mode="normal" in2="effect3_dropShadow_476_457" result="effect4_dropShadow_476_457"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="29.9739"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.929412 0 0 0 0 0.772549 0 0 0 0 0.180392 0 0 0 1 0"/>
+<feBlend mode="normal" in2="effect4_dropShadow_476_457" result="effect5_dropShadow_476_457"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="52.4543"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.929412 0 0 0 0 0.772549 0 0 0 0 0.180392 0 0 0 1 0"/>
+<feBlend mode="normal" in2="effect5_dropShadow_476_457" result="effect6_dropShadow_476_457"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect6_dropShadow_476_457" result="shape"/>
+</filter>
+</defs>
+</svg>
