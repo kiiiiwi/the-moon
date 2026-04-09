@@ -108,7 +108,7 @@ export default function OrbitClient() {
           <div className="fixed bottom-8 right-8 z-50 max-md:bottom-6 max-md:right-4">
             <SectionNavButton
               direction="next"
-              section={{ label: "月球的表面形态", href: "/geology-map" }}
+              section={{ label: "月相", href: "/phases" }}
             />
           </div>
         </>

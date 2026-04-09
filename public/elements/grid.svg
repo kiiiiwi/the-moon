@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1042 377">
+  <!-- Generator: Adobe Illustrator 29.5.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 137)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #fff;
+        stroke-width: .9px;
+      }
+
+      .st0, .st1, .st2 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .st1 {
+        stroke-width: .4px;
+      }
+
+      .st1, .st2 {
+        stroke: #c8c8c9;
+      }
+
+      .st2 {
+        stroke-width: .4px;
+      }
+    </style>
+  </defs>
+  <path class="st1" d="M.2-7.6h1041.6"/>
+  <path class="st1" d="M.2,91.1h1041.6"/>
+  <path class="st0" d="M.2,189.5h1041.6"/>
+  <path class="st1" d="M.2,287.8h1041.6"/>
+  <path class="st1" d="M.2,386.4h1041.6"/>
+  <path class="st2" d="M88.2-25.8v427.2"/>
+  <path class="st2" d="M174.5-25.8v427.2"/>
+  <path class="st2" d="M261.4-25.8v427.2"/>
+  <path class="st2" d="M347.8-25.8v428.6"/>
+  <path class="st2" d="M434.6-25.8v427.2"/>
+  <path class="st0" d="M520.8-25.8v427.2"/>
+  <path class="st2" d="M607.7-25.8v427.2"/>
+  <path class="st2" d="M694.3-25.8v427.2"/>
+  <path class="st2" d="M781.1-25.8v427.2"/>
+  <path class="st2" d="M867.7-25.8v427.2"/>
+  <path class="st2" d="M954.4-25.8v427.2"/>
+</svg>

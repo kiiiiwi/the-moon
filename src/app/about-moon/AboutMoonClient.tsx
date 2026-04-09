@@ -43,25 +43,39 @@ export default function AboutMoonClient() {
 
   return (
     <div className="about-moon-root">
-      <header>
-        <div className="about-moon-top-actions">
-          <div
-            className="about-moon-top-actions__dot"
-            style={{ background: "#F1D088", boxShadow: "0 0 6px #F1D088" }}
-          />
-          <Link
-            href="/index-knowledge-map"
-            className="about-moon-top-actions__back"
-            style={{
-              color: "rgba(193, 250, 248, 0.6)",
-              border: "1px solid rgba(193, 250, 248, 0.2)",
-              background: "rgba(193, 250, 248, 0.04)",
-            }}
-          >
-            ← 返回主页面
-          </Link>
-        </div>
 
+      {/* ── Page header — same style as geology-map ── */}
+      <div className="am-page-header">
+        <div className="am-page-header__top">
+          <div className="am-page-header__titles">
+            <h2 className="am-page-header__h2">月球的外观</h2>
+            <span className="am-page-header__sub">Appearance of the Moon</span>
+          </div>
+          <div className="am-page-header__back-wrap">
+            <div
+              className="am-page-header__back-dot"
+              style={{ background: "#F1D088", boxShadow: "0 0 6px #F1D088" }}
+            />
+            <Link
+              href="/index-knowledge-map"
+              className="am-page-header__back-link"
+              style={{
+                color: "rgba(193, 250, 248, 0.6)",
+                border: "1px solid rgba(193, 250, 248, 0.2)",
+                background: "rgba(193, 250, 248, 0.04)",
+              }}
+            >
+              ← 返回主页面
+            </Link>
+          </div>
+        </div>
+        <div className="am-page-header__line" />
+        <p className="am-page-header__desc">
+          探索月球的基本物理参数、与地球的尺寸对比，以及在太阳系卫星中的位置。
+        </p>
+      </div>
+
+      <header>
         <MoonCanvas />
 
         <div className="text">

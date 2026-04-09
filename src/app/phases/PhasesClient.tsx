@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react"
 import { Sun } from "lucide-react"
 import Link from "next/link"
 import { SectionNavButton } from "@/app/about-moon/SectionNavButton"
+import { StarField } from "@/components/StarField"
 
 // Moon phase data with orbital positions (angle in degrees from sun direction)
 const MOON_PHASES = [
@@ -167,6 +168,8 @@ export default function MoonPhaseExplorer() {
 
   return (
     <section className="relative min-h-screen bg-[#151829] text-[#E8EDF7]">
+      <StarField />
+
       <div className="absolute top-8 right-6 z-20 flex items-center gap-4 md:right-12">
         <div
           className="h-1.5 w-1.5 rounded-full"

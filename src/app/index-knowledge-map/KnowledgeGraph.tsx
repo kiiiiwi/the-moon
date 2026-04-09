@@ -40,10 +40,11 @@ const NODES_DATA: Omit<Node, "x" | "y" | "vx" | "vy">[] = [
   // 月球环境 (1个)
   { id: "6", title: "月球表面形态", radius: 36, href: "/geology-map", category: "environment" },
   // 月球地质 (1个)
-  { id: "7", title: "月球化学元素", radius: 34, href: "/chapters/chemical-elements", category: "geology" },
-  // 探月活动 (2个)
-  { id: "8", title: "人类观月史", radius: 35, href: "/human-observing-moon", category: "exploration" },
-  { id: "9", title: "人类探月活动", radius: 38, href: "/mission-sites", category: "exploration" },
+  { id: "7", title: "月球化学元素", radius: 34, href: "/elements", category: "geology" },
+  // 探月活动 (3个)
+  { id: "8", title: "人类观月史", radius: 32, href: "/human-observing-moon", category: "exploration" },
+  { id: "9", title: "人类探月活动", radius: 36, href: "/mission-sites", category: "exploration" },
+  { id: "10", title: "中国探月工程", radius: 38, href: "/change", category: "exploration" },
 ];
 
 const CONNECTIONS: Connection[] = [
@@ -55,6 +56,8 @@ const CONNECTIONS: Connection[] = [
   { from: "4", to: "1" },
   { from: "5", to: "4" },
   { from: "5", to: "1" },
+  //探月内部关联
+  { from: "9", to: "10" },  // 人类探月活动 -> 中国探月工程
   // 跨类别关联
   { from: "1", to: "6" },  // 外观 -> 表面形态
   { from: "3", to: "7" },  // 内部构造 -> 化学元素

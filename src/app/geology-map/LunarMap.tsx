@@ -379,7 +379,7 @@ export function LunarMap() {
       <div className="fixed bottom-8 right-12 z-50 max-md:bottom-6 max-md:right-4">
         <SectionNavButton
           direction="next"
-          section={{ label: "人类观月史", href: "/human-observing-moon" }}
+          section={{ label: "月球化学元素", href: "/elements" }}
         />
       </div>
 
