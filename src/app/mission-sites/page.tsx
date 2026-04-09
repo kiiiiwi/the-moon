@@ -4,6 +4,7 @@ import React, { useState, useCallback } from "react";
 import Link from "next/link";
 import { MoonGlobe } from "./MoonGlobe";
 import { LunarSankey } from "./LunarSankey";
+import { SectionNavButton } from "@/app/about-moon/SectionNavButton";
 
 export default function MissionSitesPage() {
   const [highlightedMissions, setHighlightedMissions] = useState<string[]>([]);
@@ -17,33 +18,35 @@ export default function MissionSitesPage() {
       className="w-full h-screen flex flex-col overflow-hidden"
       style={{ background: "linear-gradient(135deg, #0a0a1a 0%, #0f1529 40%, #0a0a1a 100%)" }}
     >
-      {/* Header */}
-      <header className="relative z-10 flex-shrink-0 px-6 pt-5 pb-3 md:px-12">
-        <div className="mb-2 flex items-end justify-between gap-4">
-          <div className="flex items-end gap-4">
-            <h2 className="text-3xl tracking-wider text-white md:text-4xl">探月着陆区</h2>
-            <span className="pb-1 text-sm tracking-widest text-[#C1FAF8]/50">Lunar Landing Sites</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <div
-              className="w-1.5 h-1.5 rounded-full"
-              style={{ background: "#F1D088", boxShadow: "0 0 6px #F1D088" }}
-            />
-            <Link
-              href="/index-knowledge-map"
-              className="px-3 py-1 rounded-full text-xs transition-all"
-              style={{
-                color: "rgba(193, 250, 248, 0.6)",
-                border: "1px solid rgba(193, 250, 248, 0.2)",
-                background: "rgba(193, 250, 248, 0.04)",
-              }}
-            >
-              ← 返回主页面
-            </Link>
-          </div>
+      {/* Header: same layout as geology-map */}
+      <div className="absolute top-8 right-6 z-20 flex items-center gap-4 md:right-12">
+        <div
+          className="h-1.5 w-1.5 rounded-full"
+          style={{ background: "#F1D088", boxShadow: "0 0 6px #F1D088" }}
+        />
+        <Link
+          href="/index-knowledge-map"
+          className="px-3 py-1 rounded-full text-xs transition-all"
+          style={{
+            color: "rgba(193, 250, 248, 0.6)",
+            border: "1px solid rgba(193, 250, 248, 0.2)",
+            background: "rgba(193, 250, 248, 0.04)",
+          }}
+        >
+          ← 返回主页面
+        </Link>
+      </div>
+
+      <div className="relative z-10 px-6 pt-8 pb-4 md:px-12">
+        <div className="mb-2 flex items-end gap-4">
+          <h2 className="text-3xl tracking-wider text-white md:text-4xl">探月着陆区</h2>
+          <span className="pb-1 text-sm tracking-widest text-[#C1FAF8]/50">Lunar Landing Sites</span>
         </div>
         <div className="h-px bg-gradient-to-r from-[#F1D088]/60 via-[#C1FAF8]/30 to-transparent" />
-      </header>
+        <p className="mt-3 max-w-2xl text-sm text-white/40">
+          聚焦人类探月任务的典型着陆位置，并结合任务流向图展示不同国家探月计划的演进关系。
+        </p>
+      </div>
 
       {/* Main content */}
       <div className="flex-1 flex min-h-0">
@@ -64,7 +67,7 @@ export default function MissionSitesPage() {
           </div>
           {/* Legend */}
           <div
-            className="absolute bottom-4 left-4 flex flex-col gap-1.5 p-3 rounded-lg"
+            className="absolute right-4 bottom-4 flex flex-col gap-1.5 rounded-lg p-3"
             style={{
               background: "rgba(10, 10, 26, 0.8)",
               border: "1px solid rgba(241, 208, 136, 0.15)",
@@ -140,6 +143,19 @@ export default function MissionSitesPage() {
             <span>数据涵盖 1958-2025 年所有成功探月任务</span>
           </div>
         </div>
+      </div>
+
+      <div className="fixed bottom-8 left-12 z-50 max-md:bottom-6 max-md:left-4">
+        <SectionNavButton
+          direction="prev"
+          section={{ label: "人类观月史", href: "/human-observing-moon" }}
+        />
+      </div>
+      <div className="fixed right-12 bottom-8 z-50 max-md:right-4 max-md:bottom-6">
+        <SectionNavButton
+          direction="next"
+          section={{ label: "中国探月工程", href: "/change" }}
+        />
       </div>
     </div>
   );

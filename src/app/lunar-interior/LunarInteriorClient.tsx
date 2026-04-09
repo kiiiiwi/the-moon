@@ -112,8 +112,8 @@ export default function LunarInteriorClient() {
 
   return (
     <section className="relative flex h-[100svh] min-h-0 max-h-[100svh] w-full flex-col overflow-hidden bg-[#151829] [font-family:var(--font-noto-sc-lunar-interior),_var(--font-geist-sans),_sans-serif]">
-      {/* Nav */}
-      <div className="absolute top-5 right-5 z-20 flex items-center gap-4 md:top-6 md:right-10">
+      {/* Header top action (same as geology-map) */}
+      <div className="absolute top-8 right-6 z-20 flex items-center gap-4 md:right-12">
         <div
           className="h-1.5 w-1.5 rounded-full"
           style={{ background: "#F1D088", boxShadow: "0 0 6px #F1D088" }}
@@ -131,17 +131,18 @@ export default function LunarInteriorClient() {
         </Link>
       </div>
 
-      {/* Header */}
-      <div className="relative z-10 shrink-0 px-6 pt-6 pb-3 md:px-10 md:pt-7 md:pb-3">
-        <div className="mb-1.5 flex flex-wrap items-end gap-3 md:gap-4">
-          <h2 className="text-2xl tracking-wider text-white md:text-3xl lg:text-[2rem]">
-            月球内部结构
-          </h2>
-          <span className="pb-0.5 text-xs tracking-widest text-[#C1FAF8]/50 md:text-sm">
+      {/* Header (same layout as geology-map) */}
+      <div className="relative z-10 shrink-0 px-6 pt-8 pb-4 md:px-12">
+        <div className="mb-2 flex items-end gap-4">
+          <h2 className="text-3xl tracking-wider text-white md:text-4xl">月球内部结构</h2>
+          <span className="pb-1 text-sm tracking-widest text-[#C1FAF8]/50">
             The Internal Structure of the Moon
           </span>
         </div>
         <div className="h-px bg-gradient-to-r from-[#F1D088]/60 via-[#C1FAF8]/30 to-transparent" />
+        <p className="mt-3 max-w-2xl text-sm text-white/40">
+          展示月球从月壳到内核的分层结构，结合圈层参数与演化线索理解其内部物理状态。
+        </p>
       </div>
 
       {/* Content */}

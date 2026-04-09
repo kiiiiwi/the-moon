@@ -267,7 +267,7 @@ export default function AboutMoonClient() {
       <div className="fixed bottom-8 left-8 z-50">
         <SectionNavButton
           direction="prev"
-          section={{ label: "人类探月活动", href: "/mission-sites" }}
+          section={{ label: "中国探月工程", href: "/change" }}
         />
       </div>
       <div className="fixed bottom-8 right-8 z-50">

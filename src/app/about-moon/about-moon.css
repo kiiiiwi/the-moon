@@ -7,15 +7,12 @@
     "Source Han Sans CN", "Source Han Sans SC", "Source Han Sans", "Noto Sans SC",
     system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
-  --am-header-h: 110px;
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color: var(--text);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
   background-color: #151829;
 }
@@ -34,8 +31,7 @@
 
 .about-moon-root header {
   width: 100%;
-  flex: 1;
-  min-height: calc(100vh - var(--am-header-h));
+  min-height: 100vh;
   background-color: #151829;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -370,16 +366,18 @@
 
 /* ── New page header (geology-map style) ── */
 .about-moon-root .am-page-header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
-  padding: 2rem 3rem 1rem;
-  background-color: #151829;
-  min-height: var(--am-header-h);
+  padding: 0.9rem 1.5rem 0.45rem;
+  background: linear-gradient(to bottom, rgba(21, 24, 41, 0.95), rgba(21, 24, 41, 0.7), transparent);
 }
 
 @media (max-width: 768px) {
   .about-moon-root .am-page-header {
-    padding: 1.5rem 1.5rem 0.75rem;
+    padding: 0.75rem 1rem 0.35rem;
   }
 }
 
@@ -447,12 +445,10 @@
 
 .about-moon-root .am-page-header__line {
   height: 1px;
-  background: linear-gradient(
-    to right,
-    rgba(241, 208, 136, 0.6),
-    rgba(193, 250, 248, 0.3),
-    transparent
-  );
+  background: linear-gradient(to right,
+      rgba(241, 208, 136, 0.6),
+      rgba(193, 250, 248, 0.3),
+      transparent);
   margin-bottom: 0.75rem;
 }
 
