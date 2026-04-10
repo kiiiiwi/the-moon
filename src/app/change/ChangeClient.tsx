@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ChangeStarField } from "./ChangeStarField";
 import { MissionModal } from "./MissionModal";
 import { SectionNavButton } from "@/app/about-moon/SectionNavButton";
+import { withBasePath } from "@/lib/base-path";
 
 type Phase = "绕" | "落" | "回" | "未来";
 
@@ -170,7 +171,7 @@ function MissionCard({
         <div className="relative w-full sm:w-2/5 min-h-[140px] sm:min-h-[180px] overflow-hidden flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={mission.image}
+            src={withBasePath(mission.image)}
             alt={mission.name}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />

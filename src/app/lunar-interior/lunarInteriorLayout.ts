@@ -1,34 +1,35 @@
 /** 剖面图与 mask 动画共用的布局常量（727×651 边界框内百分比） */
+import { withBasePath } from "@/lib/base-path";
 
 export const layerImages = [
   {
     id: "shadow",
-    src: "/lunar-interior/lunar-shadow.png",
+    src: withBasePath("/lunar-interior/lunar-shadow.png"),
     style: { left: "1.8%", top: "92.8%", width: "98.2%", height: "7.2%" },
   },
   {
     id: "crust",
-    src: "/lunar-interior/lunar-crust.png",
+    src: withBasePath("/lunar-interior/lunar-crust.png"),
     style: { left: "0%", top: "0%", width: "54.2%", height: "95.9%" },
   },
   {
     id: "mantle",
-    src: "/lunar-interior/lunar-mantle.png",
+    src: withBasePath("/lunar-interior/lunar-mantle.png"),
     style: { left: "18.3%", top: "2.3%", width: "50.9%", height: "90%" },
   },
   {
     id: "molten",
-    src: "/lunar-interior/lunar-molten.png",
+    src: withBasePath("/lunar-interior/lunar-molten.png"),
     style: { left: "54.2%", top: "29.8%", width: "19.7%", height: "34.7%" },
   },
   {
     id: "outer-core",
-    src: "/lunar-interior/lunar-outer-core.png",
+    src: withBasePath("/lunar-interior/lunar-outer-core.png"),
     style: { left: "65.9%", top: "35.3%", width: "13.5%", height: "23.8%" },
   },
   {
     id: "inner-core",
-    src: "/lunar-interior/lunar-inner-core.png",
+    src: withBasePath("/lunar-interior/lunar-inner-core.png"),
     style: { left: "73.9%", top: "38.4%", width: "16.4%", height: "18.3%" },
   },
 ] as const;

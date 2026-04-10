@@ -2,6 +2,7 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
+import { withBasePath } from "@/lib/base-path";
 
 export interface SectionNavItem {
   label: string;
@@ -18,10 +19,11 @@ export function SectionNavButton({
   onClick?: () => void;
 }) {
   const isPrev = direction === "prev";
+  const resolvedHref = section.href && section.href !== "#" ? withBasePath(section.href) : "#";
 
   return (
     <motion.a
-      href={section.href || "#"}
+      href={resolvedHref}
       onClick={(e) => {
         if (!section.href || section.href === "#") e.preventDefault();
         onClick?.();

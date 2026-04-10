@@ -3,9 +3,10 @@
 
 import { useEffect, useRef, useCallback, useState } from "react";
 import * as THREE from "three";
+import { withBasePath } from "@/lib/base-path";
 
-const moonTextureUrl = "/mission-sites/moon-texture.jpg";
-const moonDisplacementMapUrl = "/mission-sites/moon-displacement.jpg";
+const moonTextureUrl = withBasePath("/mission-sites/moon-texture.jpg");
+const moonDisplacementMapUrl = withBasePath("/mission-sites/moon-displacement.jpg");
 
 const MOON_INITIAL_ROTATION_Y = -1.6;
 const MOON_INITIAL_ROTATION_X = -0.2;

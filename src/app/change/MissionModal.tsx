@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X } from "lucide-react";
+import { withBasePath } from "@/lib/base-path";
 
 interface MissionModalProps {
   mission: {
@@ -67,7 +68,7 @@ export function MissionModal({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <motion.img
               key={displayImage}
-              src={displayImage}
+              src={withBasePath(displayImage)}
               alt={mission.name}
               className={
                 isTrajectoryView

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { SectionNavButton } from "@/app/about-moon/SectionNavButton";
+import { withBasePath } from "@/lib/base-path";
 import "./elements.css";
 
 const ELEMENTS = [
@@ -102,6 +103,7 @@ const ELEMENTS = [
 export default function ElementsClient() {
   const [activeIndex, setActiveIndex] = useState(0);
   const el = ELEMENTS[activeIndex];
+  const asset = (path: string) => withBasePath(path);
 
   return (
     <section className="elements-page">
@@ -143,22 +145,22 @@ export default function ElementsClient() {
         {/* Pie chart composition */}
         <img
           className="el-zufen"
-          src="/elements/zufen.png"
+          src={asset("/elements/zufen.png")}
           alt="月球化学元素组分"
           draggable={false}
         />
 
         {/* Element cards along pie chart arc */}
-        <img className="el-card el-o" src="/elements/oxygen.png" alt="O" draggable={false} />
-        <img className="el-card el-si" src="/elements/silicon.png" alt="Si" draggable={false} />
-        <img className="el-card el-fe" src="/elements/iron.png" alt="Fe" draggable={false} />
-        <img className="el-card el-ca" src="/elements/calcium.png" alt="Ca" draggable={false} />
-        <img className="el-card el-al" src="/elements/aluminum.png" alt="Al" draggable={false} />
-        <img className="el-card el-mg" src="/elements/magnesium.png" alt="Mg" draggable={false} />
-        <img className="el-card el-ti" src="/elements/titanium.png" alt="Ti" draggable={false} />
+        <img className="el-card el-o" src={asset("/elements/oxygen.png")} alt="O" draggable={false} />
+        <img className="el-card el-si" src={asset("/elements/silicon.png")} alt="Si" draggable={false} />
+        <img className="el-card el-fe" src={asset("/elements/iron.png")} alt="Fe" draggable={false} />
+        <img className="el-card el-ca" src={asset("/elements/calcium.png")} alt="Ca" draggable={false} />
+        <img className="el-card el-al" src={asset("/elements/aluminum.png")} alt="Al" draggable={false} />
+        <img className="el-card el-mg" src={asset("/elements/magnesium.png")} alt="Mg" draggable={false} />
+        <img className="el-card el-ti" src={asset("/elements/titanium.png")} alt="Ti" draggable={false} />
 
         {/* Legend (element concentration comparison) */}
-        <img className="el-legend" src="/elements/legend.png" alt="图例" draggable={false} />
+        <img className="el-legend" src={asset("/elements/legend.png")} alt="图例" draggable={false} />
 
         {/* ── Right panel: Interactive Moon Map ── */}
         <div className="el-map-panel">
@@ -174,7 +176,7 @@ export default function ElementsClient() {
                 className="absolute inset-0"
               >
                 <img
-                  src={el.image}
+                  src={asset(el.image)}
                   alt={`${el.name} distribution`}
                   className="w-full h-full object-cover"
                 />
@@ -213,7 +215,7 @@ export default function ElementsClient() {
             {/* Top-most grid SVG overlay */}
             <img
               className="el-map-grid-overlay"
-              src="/elements/grid.svg"
+              src={asset("/elements/grid.svg")}
               alt=""
               draggable={false}
               aria-hidden="true"

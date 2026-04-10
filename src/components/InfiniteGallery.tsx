@@ -6,6 +6,7 @@ import { useRef, useMemo, useCallback, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree, type ThreeEvent } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 import * as THREE from "three";
+import { withBasePath } from "@/lib/base-path";
 
 interface MoonImage {
   src: string;
@@ -263,7 +264,12 @@ function GalleryScene({
   }, []);
 
   const normalizedImages = useMemo(
-    () => images.map((img) => (typeof img === "string" ? { src: img, alt: "" } : img)),
+    () =>
+      images.map((img) =>
+        typeof img === "string"
+          ? { src: withBasePath(img), alt: "" }
+          : { ...img, src: withBasePath(img.src) }
+      ),
     [images]
   );
 

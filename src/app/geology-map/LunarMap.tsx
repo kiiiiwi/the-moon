@@ -5,6 +5,7 @@ import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, ZoomIn, ZoomOut, Maximize2, Navigation } from "lucide-react";
 import { SectionNavButton } from "@/app/about-moon/SectionNavButton";
+import { withBasePath } from "@/lib/base-path";
 
 interface POI {
   id: string;
@@ -189,6 +190,7 @@ const typeConfig = {
 };
 
 export function LunarMap() {
+  const asset = (path: string) => withBasePath(path);
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
@@ -309,7 +311,7 @@ export function LunarMap() {
             }}
           >
             <img
-              src="/geology-map/geology-map-only-mare.png"
+              src={asset("/geology-map/geology-map-only-mare.png")}
               alt="Lunar topographic map"
               className="pointer-events-none h-full w-full select-none object-contain"
               draggable={false}
@@ -352,7 +354,7 @@ export function LunarMap() {
         <div className="pointer-events-none absolute right-4 bottom-4 left-4 z-[9] flex justify-center max-md:bottom-3" aria-hidden>
           <div className="flex h-30 max-w-[calc(100%-11rem)] items-center justify-center">
             <img
-              src="/geology-map/label.png"
+              src={asset("/geology-map/label.png")}
               alt=""
               className="h-[80%] max-w-full w-auto select-none object-contain"
               draggable={false}
@@ -491,7 +493,7 @@ function DetailPanel({ poi, onClose }: { poi: POI; onClose: () => void }) {
 
         <div className="relative w-full overflow-hidden">
           <img
-            src={poi.imageUrl}
+            src={withBasePath(poi.imageUrl)}
             alt={poi.name}
             className="block h-auto max-h-[50vh] w-full max-w-full object-contain object-center"
           />

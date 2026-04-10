@@ -3,9 +3,10 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { withBasePath } from "@/lib/base-path";
 
-const MOON_TEXTURE = "/about-moon/moon-texture.jpg";
-const MOON_DISPLACEMENT = "/about-moon/moon-displacement.jpg";
+const MOON_TEXTURE = withBasePath("/about-moon/moon-texture.jpg");
+const MOON_DISPLACEMENT = withBasePath("/about-moon/moon-displacement.jpg");
 
 export function MoonCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

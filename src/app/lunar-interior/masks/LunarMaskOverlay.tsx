@@ -9,6 +9,7 @@ import {
   type MaskBaseId,
   type MaskBoxPct,
 } from "../lunarInteriorLayout";
+import { withBasePath } from "@/lib/base-path";
 
 export type LunarMaskOverlayProps = {
   baseId: MaskBaseId;
@@ -103,7 +104,7 @@ export default function LunarMaskOverlay({
         }}
       >
         <img
-          src={src}
+          src={withBasePath(src)}
           alt={`${baseId}-mask`}
           draggable={false}
           style={{

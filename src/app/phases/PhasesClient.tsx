@@ -6,6 +6,7 @@ import { Sun } from "lucide-react"
 import Link from "next/link"
 import { SectionNavButton } from "@/app/about-moon/SectionNavButton"
 import { StarField } from "@/components/StarField"
+import { withBasePath } from "@/lib/base-path"
 
 // Moon phase data with orbital positions (angle in degrees from sun direction)
 const MOON_PHASES = [
@@ -496,7 +497,7 @@ export default function MoonPhaseExplorer() {
                       ) : (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
-                          src={PHASE_IMAGE_MAP[activePhase.id]}
+                          src={withBasePath(PHASE_IMAGE_MAP[activePhase.id])}
                           alt={activePhase.name}
                           width={160}
                           height={160}

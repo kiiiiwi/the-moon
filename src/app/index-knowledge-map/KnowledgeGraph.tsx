@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { withBasePath } from "@/lib/base-path";
 
 // 四大类别颜色
 const COLORS = {
@@ -141,7 +142,7 @@ export default function KnowledgeGraph() {
   // Handle click
   const handleClick = useCallback(() => {
     if (hoveredNodeRef.current) {
-      router.push(hoveredNodeRef.current.href);
+      router.push(withBasePath(hoveredNodeRef.current.href));
     }
   }, [router]);
 

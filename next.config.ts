@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
     // GitHub Pages 仅托管静态资源，不支持 Next.js 图片优化服务
     unoptimized: true,
   },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   basePath,
   assetPrefix: basePath || undefined,
 };

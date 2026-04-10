@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Pause, Play } from "lucide-react";
 import Link from "next/link";
 import { SectionNavButton } from "@/app/about-moon/SectionNavButton";
+import { withBasePath } from "@/lib/base-path";
 
 const STAGES = [
   {
@@ -376,7 +377,7 @@ export default function OriginClient() {
                   onPlay={() => setVideoPaused(false)}
                   onPause={() => setVideoPaused(true)}
                 >
-                  <source src={activeStage.video} type="video/mp4" />
+                  <source src={withBasePath(activeStage.video)} type="video/mp4" />
                 </video>
               </motion.div>
             </AnimatePresence>

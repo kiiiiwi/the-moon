@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { SectionNavButton } from "@/app/about-moon/SectionNavButton";
 import { StarField } from "@/components/StarField";
+import { withBasePath } from "@/lib/base-path";
 import "./orbit.css";
 
 const ORBIT_TEXT_CHARS = [
@@ -16,6 +17,7 @@ const ORBIT_TEXT_CHARS = [
 ] as const;
 
 export default function OrbitClient() {
+  const asset = (path: string) => withBasePath(path);
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentScreen, setCurrentScreen] = useState(0);
   const [mounted, setMounted] = useState(false);
@@ -126,7 +128,7 @@ export default function OrbitClient() {
           <div className="os1-scale-wrap">
             <video
               className="os1-moon-bg-video"
-              src="/orbit/moonorbit.mp4"
+              src={asset("/orbit/moonorbit.mp4")}
               autoPlay
               muted
               loop
@@ -147,7 +149,7 @@ export default function OrbitClient() {
             </div>
 
             <div className="os1-dialog">
-              <img src="/orbit/dialog-box.png" alt="" className="os1-dialog-bg" draggable={false} />
+              <img src={asset("/orbit/dialog-box.png")} alt="" className="os1-dialog-bg" draggable={false} />
             </div>
           </div>
         </section>
@@ -155,26 +157,26 @@ export default function OrbitClient() {
         {/* Screen 2 — Figma node 476:356  (all PNG) */}
         <section className="orbit-screen orbit-screen2">
           <div className="orbit-screen-inner orbit-screen2-inner">
-            <img src="/orbit/s2-earthorbit.png" className="os2-earthorbit" alt="" draggable={false} />
-            <img src="/orbit/s2-moonorbit.png" className="os2-moonorbit" alt="" draggable={false} />
-            <img src="/orbit/s2-sun.png" className="os2-sun" alt="" draggable={false} />
-            <img src="/orbit/s2-earth.png" className="os2-earth" alt="" draggable={false} />
-            <img src="/orbit/s2-moon.png" className="os2-moon" alt="" draggable={false} />
-            <img src="/orbit/s2-border.png" className="os2-border" alt="" draggable={false} />
-            <img src="/orbit/s2-vline.png" className="os2-vline" alt="" draggable={false} />
-            <img src="/orbit/s2-dirtext.png" className="os2-dirtext" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-earthorbit.png")} className="os2-earthorbit" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-moonorbit.png")} className="os2-moonorbit" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-sun.png")} className="os2-sun" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-earth.png")} className="os2-earth" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-moon.png")} className="os2-moon" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-border.png")} className="os2-border" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-vline.png")} className="os2-vline" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-dirtext.png")} className="os2-dirtext" alt="" draggable={false} />
             <video
               className="os2-zoom-strip"
-              src="/orbit/zoominorbit.mp4"
+              src={asset("/orbit/zoominorbit.mp4")}
               autoPlay
               muted
               loop
               playsInline
               preload="auto"
             />
-            <img src="/orbit/s2-mask.png" className="os2-mask" alt="" draggable={false} />
-            <img src="/orbit/s2-dialog-top.png" className="os2-dialog-top" alt="" draggable={false} />
-            <img src="/orbit/s2-dialog-bottom.png" className="os2-dialog-bottom" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-mask.png")} className="os2-mask" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-dialog-top.png")} className="os2-dialog-top" alt="" draggable={false} />
+            <img src={asset("/orbit/s2-dialog-bottom.png")} className="os2-dialog-bottom" alt="" draggable={false} />
           </div>
         </section>
 
@@ -182,37 +184,37 @@ export default function OrbitClient() {
         <section className="orbit-screen orbit-screen3">
           <div className="orbit-screen-inner orbit-screen3-inner">
             {/* Earth orbit (dashed ellipse, partially off-screen left) */}
-            <img src="/orbit/s3-earthorbit.png" className="os3-earthorbit" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-earthorbit.png")} className="os3-earthorbit" alt="" draggable={false} />
 
             {/* Moon orbit wavy path */}
-            <img src="/orbit/s3-moonorbit.png" className="os3-moonorbit" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-moonorbit.png")} className="os3-moonorbit" alt="" draggable={false} />
 
             {/* Sun */}
-            <img src="/orbit/s3-sun.png" className="os3-sun" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-sun.png")} className="os3-sun" alt="" draggable={false} />
 
             {/* Earth */}
-            <img src="/orbit/s3-earth.png" className="os3-earth" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-earth.png")} className="os3-earth" alt="" draggable={false} />
 
             {/* Moon */}
-            <img src="/orbit/s3-moon.png" className="os3-moon" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-moon.png")} className="os3-moon" alt="" draggable={false} />
 
             {/* Border frame */}
-            <img src="/orbit/s3-border.png" className="os3-border" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-border.png")} className="os3-border" alt="" draggable={false} />
 
             {/* Gradient mask overlay */}
-            <img src="/orbit/s3-mask.png" className="os3-mask" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-mask.png")} className="os3-mask" alt="" draggable={false} />
 
             {/* Zoom-in trajectory strip */}
-            <img src="/orbit/s3-zoom.png" className="os3-zoom" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-zoom.png")} className="os3-zoom" alt="" draggable={false} />
 
             {/* Connector/transition gradient group */}
-            <img src="/orbit/s3-connector.png" className="os3-connector" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-connector.png")} className="os3-connector" alt="" draggable={false} />
 
             {/* Main orbital diagram */}
-            <img src="/orbit/s3-orbit-diagram.png" className="os3-orbit-diagram" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-orbit-diagram.png")} className="os3-orbit-diagram" alt="" draggable={false} />
 
             {/* Dialog box */}
-            <img src="/orbit/s3-dialog.png" className="os3-dialog" alt="" draggable={false} />
+            <img src={asset("/orbit/s3-dialog.png")} className="os3-dialog" alt="" draggable={false} />
           </div>
         </section>
 
