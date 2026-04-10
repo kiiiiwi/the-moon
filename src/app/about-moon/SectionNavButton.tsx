@@ -18,10 +18,20 @@ export function SectionNavButton({
   onClick?: () => void;
 }) {
   const isPrev = direction === "prev";
+  const normalizedHref = (() => {
+    const raw = section.href || "#";
+    if (raw === "#" || raw.startsWith("http://") || raw.startsWith("https://") || raw.startsWith("//")) {
+      return raw;
+    }
+    if (raw.startsWith("/") && !raw.endsWith("/")) {
+      return `${raw}/`;
+    }
+    return raw;
+  })();
 
   return (
     <motion.a
-      href={section.href || "#"}
+      href={normalizedHref}
       onClick={(e) => {
         if (!section.href || section.href === "#") e.preventDefault();
         onClick?.();
