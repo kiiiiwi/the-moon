@@ -268,6 +268,57 @@ function GalleryScene({
   );
 
   const textures = useTexture(normalizedImages.map((img) => img.src));
+  const preparedTextures = useMemo(() => {
+    const MAX_TEXTURE_DIMENSION = 2048;
+
+    return textures.map((texture) => {
+      const image = texture.image as
+        | { width?: number; height?: number }
+        | HTMLImageElement
+        | HTMLCanvasElement
+        | ImageBitmap
+        | undefined;
+
+      const width = typeof image?.width === "number" ? image.width : 0;
+      const height = typeof image?.height === "number" ? image.height : 0;
+
+      if (!width || !height || width <= MAX_TEXTURE_DIMENSION && height <= MAX_TEXTURE_DIMENSION) {
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.generateMipmaps = false;
+        texture.needsUpdate = true;
+        return texture;
+      }
+
+      const scale = MAX_TEXTURE_DIMENSION / Math.max(width, height);
+      const targetWidth = Math.max(1, Math.round(width * scale));
+      const targetHeight = Math.max(1, Math.round(height * scale));
+      const canvas = document.createElement("canvas");
+      canvas.width = targetWidth;
+      canvas.height = targetHeight;
+
+      const context = canvas.getContext("2d", { alpha: true });
+      if (!context) {
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.generateMipmaps = false;
+        texture.needsUpdate = true;
+        return texture;
+      }
+
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = "high";
+      context.drawImage(image as CanvasImageSource, 0, 0, targetWidth, targetHeight);
+
+      const optimized = new THREE.Texture(canvas);
+      optimized.colorSpace = texture.colorSpace;
+      optimized.minFilter = THREE.LinearFilter;
+      optimized.magFilter = THREE.LinearFilter;
+      optimized.generateMipmaps = false;
+      optimized.needsUpdate = true;
+      return optimized;
+    });
+  }, [textures]);
 
   const materials = useMemo(
     () => Array.from({ length: visibleCount }, () => createClothMaterial()),
@@ -475,7 +526,7 @@ function GalleryScene({
   return (
     <>
       {planesData.current.map((plane, i) => {
-        const texture = textures[plane.imageIndex];
+        const texture = preparedTextures[plane.imageIndex];
         const material = materials[i];
         const imageData = normalizedImages[plane.imageIndex];
 
