@@ -2,6 +2,7 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
+import { withBasePath } from "@/lib/base-path";
 
 export interface SectionNavItem {
   label: string;
@@ -24,9 +25,9 @@ export function SectionNavButton({
       return raw;
     }
     if (raw.startsWith("/") && !raw.endsWith("/")) {
-      return `${raw}/`;
+      return withBasePath(`${raw}/`);
     }
-    return raw;
+    return raw.startsWith("/") ? withBasePath(raw) : raw;
   })();
 
   return (
