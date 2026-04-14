@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useCallback, useEffect } from "react";
+import { withBasePath } from "@/lib/base-path";
 
 type TabKey = "data" | "earth" | "satellites";
 
@@ -32,7 +33,7 @@ export function useAboutMoonAudio() {
 
   const ensureBgmAudio = useCallback(() => {
     if (bgmRef.current) return bgmRef.current;
-    const audio = new Audio(BGM_SRC);
+    const audio = new Audio(withBasePath(BGM_SRC));
     audio.volume = 0.35;
     bgmRef.current = audio;
     audio.addEventListener("play", () => {
@@ -67,7 +68,7 @@ export function useAboutMoonAudio() {
         tabAudioRef.current.currentTime = 0;
         tabAudioRef.current = null;
       }
-      const audio = new Audio(TAB_AUDIO[tab]);
+      const audio = new Audio(withBasePath(TAB_AUDIO[tab]));
       audio.volume = 0.5;
       tabAudioRef.current = audio;
       audio.addEventListener("play", inc);
