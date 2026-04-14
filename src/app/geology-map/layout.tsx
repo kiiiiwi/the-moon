@@ -9,7 +9,7 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "Geology Map | Moon",
+  title: "Geology Map | The Moon",
   description: "Interactive lunar geology map with points of interest.",
 };
 

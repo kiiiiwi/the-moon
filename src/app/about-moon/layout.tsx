@@ -9,7 +9,7 @@ const kanit = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "Information about the moon | Lunar",
+  title: "About the moon | The Moon",
   description:
     "Explore lunar statistics, Earth comparison, and satellite size context with an interactive 3D Moon.",
 };

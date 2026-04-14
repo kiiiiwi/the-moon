@@ -458,3 +458,13 @@
   max-width: 42rem;
   line-height: 1.6;
 }
+
+/* ── Audio wave indicator keyframes ── */
+@keyframes am-wave-bounce {
+  0% {
+    transform: scaleY(0.25);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}

@@ -9,7 +9,7 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "Lunar Interior | Moon",
+  title: "Lunar Interior | The Moon",
   description: "Information related to the internal structure of the Moon.",
 };
 

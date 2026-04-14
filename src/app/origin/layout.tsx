@@ -9,7 +9,7 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "月球的起源与演化 | Moon",
+  title: "The Origin and Evolution | The Moon",
   description: "探索月球从诞生到沉寂的六个关键演化阶段。",
 };
 

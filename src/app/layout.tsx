@@ -20,7 +20,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "优化月球科普平台",
+  title: "The Moon",
   description: "月球科普平台主界面",
 };
 

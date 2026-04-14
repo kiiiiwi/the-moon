@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { AudioWaveIndicator } from "./AudioWaveIndicator";
 import { MoonCanvas } from "./MoonCanvas";
 import { SectionNavButton } from "./SectionNavButton";
+import { useAboutMoonAudio } from "./useAboutMoonAudio";
 import "./about-moon.css";
 
 type TabKey = "data" | "earth" | "satellites";
@@ -16,6 +18,19 @@ const TABS: { key: TabKey; label: string; controls: string; id: string }[] = [
 
 export default function AboutMoonClient() {
   const [active, setActive] = useState<TabKey>("data");
+  const { isPlaying, bgmBlocked, playBgm, resumeBgm, playTab } = useAboutMoonAudio();
+
+  useEffect(() => {
+    playBgm();
+  }, [playBgm]);
+
+  const handleTabClick = useCallback(
+    (key: TabKey) => {
+      setActive(key);
+      playTab(key);
+    },
+    [playTab],
+  );
 
   const onKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
     const current = (e.target as HTMLElement | null)?.closest<HTMLButtonElement>(
@@ -96,7 +111,7 @@ export default function AboutMoonClient() {
                     id={t.id}
                     data-tab={t.key}
                     tabIndex={isActive ? 0 : -1}
-                    onClick={() => setActive(t.key)}
+                    onClick={() => handleTabClick(t.key)}
                   >
                     {t.label}
                   </button>
@@ -263,6 +278,12 @@ export default function AboutMoonClient() {
 
         </div>
       </header>
+
+      <AudioWaveIndicator
+        active={isPlaying}
+        showPlayBtn={bgmBlocked}
+        onPlay={resumeBgm}
+      />
 
       <div className="fixed bottom-8 left-8 z-50">
         <SectionNavButton

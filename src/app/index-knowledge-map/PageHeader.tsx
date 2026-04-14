@@ -18,7 +18,9 @@ export default function PageHeader() {
           ← 返回主页面
         </Link>
 
-        <button
+
+        <Link
+          href="/about-moon"
           className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105"
           style={{
             border: "1px solid #F1D088",
@@ -27,7 +29,7 @@ export default function PageHeader() {
           }}
         >
           开始探索
-        </button>
+        </Link>
       </div>
     </header>
   );

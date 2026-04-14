@@ -9,7 +9,7 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "月相探索 | Moon Phase Explorer",
+  title: "Phases | The Moon",
   description: "通过透视光线投射理解月相变化的交互式可视化",
 };
 

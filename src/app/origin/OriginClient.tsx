@@ -219,6 +219,7 @@ export default function OriginClient() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [videoPaused, setVideoPaused] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const nodeSfxRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -228,6 +229,25 @@ export default function OriginClient() {
       });
     }
   }, [activeIndex]);
+
+  useEffect(() => {
+    const sfx = new Audio(withBasePath("/origin/科技感.mp3"));
+    sfx.loop = false;
+    sfx.preload = "auto";
+    sfx.volume = 0.45;
+    nodeSfxRef.current = sfx;
+    return () => {
+      sfx.pause();
+      nodeSfxRef.current = null;
+    };
+  }, []);
+
+  const playNodeSfx = () => {
+    const sfx = nodeSfxRef.current;
+    if (!sfx) return;
+    sfx.currentTime = 0;
+    void sfx.play().catch(() => {});
+  };
 
   const toggleVideoPlayback = () => {
     const el = videoRef.current;
@@ -305,7 +325,10 @@ export default function OriginClient() {
                 stage={stage}
                 index={i}
                 isActive={i === activeIndex}
-                onSelect={() => setActiveIndex(i)}
+                onSelect={() => {
+                  setActiveIndex(i);
+                  playNodeSfx();
+                }}
               />
             ))}
           </div>

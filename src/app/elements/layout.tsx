@@ -9,7 +9,7 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "月球化学元素 | Moon Chemical Elements",
+  title: "Chemical Elements | The Moon",
   description: "月球化学元素组成与分布",
 };
 

@@ -8,7 +8,7 @@ const notoSansSc = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "月球知识图谱",
+  title: "Index | The Moon",
   description: "探索月球知识图谱，查看月球概览、环境、地质与探月活动关联。",
 };
 
