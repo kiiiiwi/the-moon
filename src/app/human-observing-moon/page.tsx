@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BgmPlayer } from "@/components/BgmPlayer";
 import { SectionNavButton } from "@/app/about-moon/SectionNavButton";
 import InfiniteGallery from "@/components/InfiniteGallery";
 import { StarField } from "@/components/StarField";
@@ -40,6 +41,7 @@ export default function HumanObservingMoonPage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#151829] text-white">
+      <BgmPlayer src="/Moonlight_at_the_Meridian.mp3" />
       <StarField />
       <div className="orbital-line top-[15%] left-[5%] w-[25%] opacity-50" />
       <div className="orbital-line top-[15%] right-[5%] w-[25%] opacity-50" />

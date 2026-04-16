@@ -6,7 +6,7 @@ const LEGEND_ITEMS = [
   { label: "月球概览", color: "#F1D088", description: "外观、起源、构造、地月系、月相" },
   { label: "月球环境", color: "#C1FAF8", description: "表面形态" },
   { label: "月球地质", color: "#E4B8FF", description: "化学元素" },
-  { label: "探月活动", color: "#FFB899", description: "观月史、探月活动" },
+  { label: "探月活动", color: "#FFB899", description: "观月史、探月活动、中国探月工程" },
 ];
 
 export default function GraphLegend() {

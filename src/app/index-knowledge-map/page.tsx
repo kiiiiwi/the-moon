@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { useEffect, useState } from "react";
+import { BgmPlayer } from "@/components/BgmPlayer";
 import PageHeader from "./PageHeader";
 import KnowledgeGraph from "./KnowledgeGraph";
 import GraphLegend from "./GraphLegend";
@@ -40,6 +41,7 @@ export default function IndexKnowledgeMapPage() {
         style={{ background: "radial-gradient(circle, #C1FAF8 0%, transparent 70%)" }}
       />
 
+      <BgmPlayer src="/Moonlight_at_the_Meridian.mp3" />
       <PageHeader />
 
       <div className="fixed top-28 left-1/2 -translate-x-1/2 z-30 text-center">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
+import { BgmPlayer } from "@/components/BgmPlayer";
 
 const goldStars = [
   { x: 31.6, y: 77.3, size: 7 },
@@ -697,6 +698,8 @@ export default function HomeLandingClient() {
       >
         {pages}
       </motion.div>
+
+      <BgmPlayer src="/Moonlight_at_the_Meridian.mp3" />
 
       <div className="fixed top-1/2 right-4 z-50 flex -translate-y-1/2 flex-col gap-3">
         {[0, 1, 2].map((i) => (
