@@ -16,6 +16,8 @@ const BGM_SRC = "/about-moon/外观总起.mp3";
 export function useAboutMoonAudio() {
   const bgmRef = useRef<HTMLAudioElement | null>(null);
   const tabAudioRef = useRef<HTMLAudioElement | null>(null);
+  /** 开场语音是否完整播放过一遍（完成前禁止播放选项卡语音） */
+  const bgmIntroDoneRef = useRef(false);
   const [isPlaying, setIsPlaying] = useState(false);
   /** BGM 因 autoplay 被阻止，等待用户手动触发 */
   const [bgmBlocked, setBgmBlocked] = useState(false);
@@ -41,6 +43,7 @@ export function useAboutMoonAudio() {
       setBgmBlocked(false);
     });
     audio.addEventListener("ended", () => {
+      bgmIntroDoneRef.current = true;
       dec();
       bgmRef.current = null;
     });
@@ -50,6 +53,7 @@ export function useAboutMoonAudio() {
 
   const playBgm = useCallback(() => {
     const audio = ensureBgmAudio();
+    bgmIntroDoneRef.current = false;
     audio.play().catch(() => {
       setBgmBlocked(true);
     });
@@ -58,11 +62,15 @@ export function useAboutMoonAudio() {
   /** 用户点击按钮手动触发 BGM（绕过 autoplay 限制） */
   const resumeBgm = useCallback(() => {
     const audio = ensureBgmAudio();
+    bgmIntroDoneRef.current = false;
     audio.play().catch(() => {});
   }, [ensureBgmAudio]);
 
   const playTab = useCallback(
     (tab: TabKey) => {
+      // 开场语音未播完一遍前，忽略选项卡语音请求，避免音轨重叠
+      if (!bgmIntroDoneRef.current) return;
+
       if (tabAudioRef.current) {
         tabAudioRef.current.pause();
         tabAudioRef.current.currentTime = 0;

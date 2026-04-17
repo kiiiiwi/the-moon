@@ -194,9 +194,31 @@
   position: relative;
   flex: 1;
   min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0.75rem;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 与 grid.svg viewBox(1042×377) 及地图 PNG 一致，随窗口仅等比例缩放 */
+.el-map-inner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  max-height: 100%;
+  aspect-ratio: 1042 / 377;
+  flex-shrink: 1;
+}
+
+.el-map-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .el-map-grid-overlay {
@@ -204,7 +226,8 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: contain;
+  object-position: center;
   pointer-events: none;
   user-select: none;
   z-index: 30;
@@ -330,8 +353,13 @@
   }
 
   .el-map-container {
-    aspect-ratio: 16/9;
     flex: none;
+    min-height: 0;
+  }
+
+  .el-map-inner {
+    width: 100%;
+    max-height: min(56vh, 100%);
   }
 
   .el-map-info {

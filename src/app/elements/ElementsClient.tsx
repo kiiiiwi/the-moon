@@ -166,61 +166,62 @@ export default function ElementsClient() {
         <div className="el-map-panel">
           {/* Map container */}
           <div className="el-map-container">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={el.symbol}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.6 }}
-                className="absolute inset-0"
-              >
-                <img
-                  src={asset(el.image)}
-                  alt={`${el.name} distribution`}
-                  className="w-full h-full object-cover"
-                />
-                {/* Color overlay */}
-                <div
+            <div className="el-map-inner">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={el.symbol}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6 }}
                   className="absolute inset-0"
-                  style={{
-                    background: `radial-gradient(ellipse at center, ${el.color}20, transparent 70%)`,
-                  }}
-                />
-              </motion.div>
-            </AnimatePresence>
+                >
+                  <img
+                    src={asset(el.image)}
+                    alt={`${el.name} distribution`}
+                    className="el-map-media"
+                  />
+                  {/* Color overlay */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: `radial-gradient(ellipse at center, ${el.color}20, transparent 70%)`,
+                    }}
+                  />
+                </motion.div>
+              </AnimatePresence>
 
-            {/* Corner decorations */}
-            <div className="absolute top-2 left-2">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M0 8V0H8" stroke={el.color} strokeOpacity="0.6" />
-              </svg>
-            </div>
-            <div className="absolute top-2 right-2">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M20 8V0H12" stroke={el.color} strokeOpacity="0.6" />
-              </svg>
-            </div>
-            <div className="absolute bottom-2 left-2">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M0 12V20H8" stroke={el.color} strokeOpacity="0.6" />
-              </svg>
-            </div>
-            <div className="absolute bottom-2 right-2">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M20 12V20H12" stroke={el.color} strokeOpacity="0.6" />
-              </svg>
-            </div>
+              {/* Corner decorations */}
+              <div className="absolute top-2 left-2">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M0 8V0H8" stroke={el.color} strokeOpacity="0.6" />
+                </svg>
+              </div>
+              <div className="absolute top-2 right-2">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M20 8V0H12" stroke={el.color} strokeOpacity="0.6" />
+                </svg>
+              </div>
+              <div className="absolute bottom-2 left-2">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M0 12V20H8" stroke={el.color} strokeOpacity="0.6" />
+                </svg>
+              </div>
+              <div className="absolute bottom-2 right-2">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M20 12V20H12" stroke={el.color} strokeOpacity="0.6" />
+                </svg>
+              </div>
 
-            {/* Top-most grid SVG overlay */}
-            <img
-              className="el-map-grid-overlay"
-              src={asset("/elements/grid.svg")}
-              alt=""
-              draggable={false}
-              aria-hidden="true"
-            />
-
+              {/* Top-most grid SVG overlay — 与地图同比例 contain，避免拉伸 */}
+              <img
+                className="el-map-grid-overlay"
+                src={asset("/elements/grid.svg")}
+                alt=""
+                draggable={false}
+                aria-hidden="true"
+              />
+            </div>
           </div>
 
           {/* Bottom info cards */}
