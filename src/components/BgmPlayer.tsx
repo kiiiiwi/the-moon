@@ -16,22 +16,18 @@ export function BgmPlayer({ src, volume = 0.3 }: BgmPlayerProps) {
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
+    let cancelled = false;
+
     const audio = new Audio(withBasePath(src));
     audio.loop = true;
     audio.volume = volume;
     audio.preload = "auto";
     audioRef.current = audio;
 
-    const onPlay = () => setPlaying(true);
-    const onPause = () => setPlaying(false);
+    const onPlay = () => { if (!cancelled) setPlaying(true); };
+    const onPause = () => { if (!cancelled) setPlaying(false); };
     audio.addEventListener("play", onPlay);
     audio.addEventListener("pause", onPause);
-
-    const resumePlayback = () => {
-      audio.play().catch(() => {
-        setPlaying(false);
-      });
-    };
 
     const retryEvents: Array<keyof WindowEventMap> = [
       "pointerdown",
@@ -46,19 +42,30 @@ export function BgmPlayer({ src, volume = 0.3 }: BgmPlayerProps) {
       }
     };
 
+    const resumePlayback = () => {
+      if (cancelled) return;
+      removeRetryListeners();
+      audio.play().then(() => {
+        if (cancelled) audio.pause();
+      }).catch(() => {});
+    };
+
     audio
       .play()
       .then(() => {
-        removeRetryListeners();
+        if (cancelled) audio.pause();
+        else removeRetryListeners();
       })
       .catch(() => {
+        if (cancelled) return;
         setPlaying(false);
         for (const eventName of retryEvents) {
-          window.addEventListener(eventName, resumePlayback, { once: true });
+          window.addEventListener(eventName, resumePlayback);
         }
       });
 
     return () => {
+      cancelled = true;
       removeRetryListeners();
       audio.removeEventListener("play", onPlay);
       audio.removeEventListener("pause", onPause);

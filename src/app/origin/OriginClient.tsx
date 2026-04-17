@@ -222,12 +222,17 @@ export default function OriginClient() {
   const nodeSfxRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      void videoRef.current.load();
-      void videoRef.current.play().catch(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.load();
+    el.muted = true;
+    el.play()
+      .then(() => {
+        el.muted = false;
+      })
+      .catch(() => {
         setVideoPaused(true);
       });
-    }
   }, [activeIndex]);
 
   useEffect(() => {
@@ -396,7 +401,6 @@ export default function OriginClient() {
                   loop
                   playsInline
                   controlsList="nodownload"
-                  muted
                   onPlay={() => setVideoPaused(false)}
                   onPause={() => setVideoPaused(true)}
                 >
@@ -437,6 +441,10 @@ export default function OriginClient() {
             </div>
           </div>
         </motion.div>
+
+        <p className="mt-4 text-center text-sm text-white/40">
+          视频由 AI 模型模拟生成，仅做示意
+        </p>
       </div>
 
       {/* Bottom section navigation (same as geology-map) */}
