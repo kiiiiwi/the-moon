@@ -486,9 +486,10 @@ function DetailPanel({ poi, onClose }: { poi: POI; onClose: () => void }) {
 
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-20 flex h-7 w-7 items-center justify-center text-white/25 transition-colors hover:text-white/60"
+          className="absolute top-3 right-3 z-20 flex h-9 w-9 items-center justify-center transition-colors"
+          style={{ color: `${config.color}CC` }}
         >
-          <X size={13} />
+          <X size={20} strokeWidth={2.8} />
         </button>
 
         <div className="relative w-full overflow-hidden">
