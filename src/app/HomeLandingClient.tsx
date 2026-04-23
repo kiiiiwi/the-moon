@@ -647,9 +647,14 @@ export default function HomeLandingClient() {
         transition={{ duration: 1.2 }}
       >
         <h2
+          className="text-3xl md:text-4xl font-bold mb-2"
           style={{
-            color: "#F1D088",
-            fontFamily: "Georgia, serif",
+            background: "linear-gradient(90deg, #F1D088 0%, #ffffff 50%, #C1FAF8 100%)",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+            WebkitTextFillColor: "transparent",
+            display: "inline-block",
             fontSize: "clamp(1.8rem, 4vw, 3rem)",
             marginBottom: 24,
           }}
@@ -671,7 +676,6 @@ export default function HomeLandingClient() {
             style={{
               border: "1px solid rgba(241,208,136,0.5)",
               color: "#F1D088",
-              fontFamily: "Georgia, serif",
             }}
             whileHover={{
               scale: 1.05,
