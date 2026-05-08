@@ -371,13 +371,13 @@
   left: 0;
   right: 0;
   z-index: 10;
-  padding: 0.9rem 1.5rem 0.45rem;
-  background: linear-gradient(to bottom, rgba(21, 24, 41, 0.95), rgba(21, 24, 41, 0.7), transparent);
+  padding: 2rem 1.5rem 1rem;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .about-moon-root .am-page-header {
-    padding: 0.75rem 1rem 0.35rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
@@ -395,7 +395,7 @@
 }
 
 .about-moon-root .am-page-header__h2 {
-  font-size: 2.25rem;
+  font-size: 1.875rem;
   letter-spacing: 0.05em;
   color: #fff;
   line-height: 1.2;
@@ -404,7 +404,7 @@
 
 @media (min-width: 768px) {
   .about-moon-root .am-page-header__h2 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 }
 
@@ -449,10 +449,10 @@
       rgba(241, 208, 136, 0.6),
       rgba(193, 250, 248, 0.3),
       transparent);
-  margin-bottom: 0.75rem;
 }
 
 .about-moon-root .am-page-header__desc {
+  margin-top: 0.75rem;
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.4);
   max-width: 42rem;
